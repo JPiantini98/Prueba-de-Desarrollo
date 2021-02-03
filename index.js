@@ -47,7 +47,7 @@ function employeesTable (table ,employeesList) {
     }
 }
 
-/*
+/* DATATABLE ATTEMPT FUNCTION
 function dataTable(list){
     $(document).ready(function() {
         $('#tables').DataTable( {
@@ -72,6 +72,8 @@ async function getEmployees () {
     let response = await fetch("https://randomuser.me/api/?results=20");
     let json = await response.json();
     for (let person in json.results) {
+
+        //EMPLOYEELIST ARRAY FILLING PROCESS
         employeesList.push(
             employees(
                 json.results[person].id.value,
@@ -88,6 +90,7 @@ async function getEmployees () {
 
     let table = document.getElementById('table');
     employeesTable(table, employeesList);
+
     //dataTable(employeesList);
 }
 
